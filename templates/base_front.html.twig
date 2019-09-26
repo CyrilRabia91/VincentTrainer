@@ -26,25 +26,11 @@
 
     </head>
     <body>
-
+        <div class="extra-space"></div>
         {% include 'Front/header.html.twig' %}
-        <div id="wrapper">
-            <div class="background_landing" style="background: #666 url({{ asset('images/fond2.jpg') }}) center no-repeat; background-size: cover ">
-
-            {% block contentwrapper %}
-
-            {% endblock %}
-            </div>
-        </div>
-        {% block content %}
+        {% block body %}
 
         {% endblock %}
-
-        <div id="main">
-            {% block body %}
-
-            {% endblock %}
-        </div>
         {% include 'Front/footer.html.twig' %}
     </body>
 </html>
@@ -53,7 +39,7 @@
 
         $('#header').css({
             'width': '320px',
-            'padding':'0 50px'
+            'padding':'50px 50px 0 50px'
         });
 
         $('.extra-space').addClass('active');
@@ -63,10 +49,11 @@
     function closeMenu() {
         $('#header').css({
             'width': '0px',
-            'padding':'0px'
+            'padding':'50px 0 0 0'
         });
         $('.extra-space').removeClass('active');
     }
+
 </script>
 {% block script %}
 
