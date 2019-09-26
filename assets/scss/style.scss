@@ -1,6 +1,20 @@
-//@import "_header";
+@import "_header";
+@import "_general";
+@import "_home";
+@import "_footer";
+@import "_logs";
+@import "_contact";
+@import "_admin";
+@import "_calendar";
+@import "_user-account";
+@import "_front-property";
 
+//display: flex;
+//justify-content: center;
+//flex-direction: column;
 
+//Color
+//$principal = #DBC5AD;
 
 .flex-around{display: flex;justify-content: space-around;}
 .flex-between{display: flex;justify-content: space-between;}

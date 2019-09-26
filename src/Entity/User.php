@@ -44,6 +44,11 @@ class User implements UserInterface
      */
     private $phone;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $budget;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -144,6 +149,18 @@ class User implements UserInterface
     public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
+
+        return $this;
+    }
+
+    public function getBudget()
+    {
+        return $this->budget;
+    }
+
+    public function setBudget(?string $budget): self
+    {
+        $this->budget = $budget;
 
         return $this;
     }

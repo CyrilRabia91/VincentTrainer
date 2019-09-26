@@ -1,0 +1,305 @@
+#admin_user{
+  padding: 40px 40px;
+  .icon-user{
+    display: block;
+    background-color: orange;
+    color: white;
+    padding: 6px 22px;
+    width: 85px;
+    height: 35px;
+    border-radius: 25px;
+  }
+  .icon-admin{
+    display: block;
+    background-color: forestgreen;
+    color: white;
+    padding: 6px 15px;
+    width: 85px;
+    height: 35px;
+    border-radius: 25px;
+  }
+  .icon-homeowner{
+    display: block;
+    background-color: indianred;
+    color: white;
+    padding: 6px 15px;
+    width: 85px;
+    height: 35px;
+    border-radius: 25px;
+  }
+}
+
+#admin_property {
+  padding: 40px 40px;
+
+  .middle{
+    width: 50%;
+  }
+  .nomProprio{
+    font-size: 18px;
+    margin-bottom: 0;
+    font-weight: bold;
+  }
+  .litte_picture{
+    width: 100px;
+    height: auto;
+  }
+  .border{
+    padding: 10px;
+    border-radius: 15px;
+    border:2px solid lightgrey;
+    width: 170px;
+    height: auto;
+    margin: 0 15px;
+    text-align: center;
+    box-shadow: 0 0 35px rgba(0,0,0,.2);
+  }
+  .address{
+    font-size: 12px;
+    font-weight: 300;
+    position: relative;
+    top: -20px;
+  }
+  .container_all_property{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    .item{
+      display: block;
+      width: 350px;
+      height: 495px;
+      padding:10px;
+      box-shadow: 0 0 35px rgba(0,0,0,.2);
+      margin: 25px;
+      border-radius: 5px;
+      .container_information{
+        position: relative;
+        top: -25px;
+      }
+      img{
+        background-color: yellowgreen;
+        display: block;
+        width: 100%;
+        height: 200px;
+      }
+      .price{
+        p{
+          margin:0;
+          padding-right:15px ;
+          text-align: right;
+          display: block;
+          background-color: rgba(0,0,0,0.5);
+          color: white;
+          font-weight: bold;
+          font-size: 18px;
+        }
+      }
+      .action{
+        display: flex;
+        justify-content: space-between;
+        .published{
+          margin-left: 10px;
+          margin-top: 15px;
+        }
+      }
+      .content{
+       display:block;
+        height: 138px;
+        overflow: hidden;
+      }
+      .title{
+        font-size:20px;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+#admin_option{
+  padding: 40px 40px;
+  #button_help_daily_message{
+    height: 40px;
+    margin: 10px auto;
+  }
+  #explication_daily_message{
+    display: none;
+  }
+  .container_opinion{
+    display: flex;
+    flex-wrap:wrap;
+    .item_opinion{
+      border: 2px solid lightgrey;
+      width: 450px;
+      min-height: 200px;
+      padding: 10px;
+      border-radius: 15px;
+      margin: 15px;
+      label{
+        margin: 0;
+      }
+      .content{
+        min-height: 72px;
+      }
+      .input_published{
+        margin-left: 12px;
+      }
+      .input_archived{
+        margin-left: 21px;
+      }
+      .position_bottom{
+        position: relative;
+        bottom: 0;
+      }
+    }
+  }
+  .container_option_site{
+    .item{
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 5px;
+      box-shadow: 0 0 35px rgba(0,0,0,.2);
+      width: 100%;
+      .size{
+        height: 250px;
+      }
+    }
+  }
+}
+
+#admin_conversation{
+  padding: 40px 40px;
+  font-family: Montserrat;
+  .container_all_chat{
+    display: flex;
+    .container_left{
+      width: 315px;
+      display: block;
+
+      .chat{
+        width: 300px;
+        height: 75px;
+        background-color: #DEDEDE;
+        border-radius: 15px;
+        margin: 10px;
+        padding: 20px;
+        display: block;
+        box-shadow: 0 0 3px rgba(0,0,0,.6);
+      }
+      .chat:hover{
+        box-shadow: 0 0 3px #2050BC;
+        border:2px solid #2050BC ;
+      }
+      .active_chat{
+        box-shadow: 0 0 3px #2050BC;
+        border:2px solid #2050BC ;
+      }
+    }
+    .container_right{
+      width: 100%;
+      display: block;
+      padding: 15px;
+      .container_chat{
+        max-width:1000px;
+        width: 100%;
+        height: 600px;
+        box-shadow: 0 0 35px rgba(0,0,0,.2);
+        border-radius: 15px;
+        margin: 0 auto;
+        padding: 20px;
+        .header_chat{
+          width:100%;
+          height: 60px;
+        }
+        .container_all_message{
+          overflow-y: scroll;
+          overflow-x: hidden;
+          width: 100%;
+          height: 440px;
+
+          .message_admin {
+            display: flex;
+            width: fit-content;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background-color: #0087F5;
+            font-family: Montserrat;
+            margin-left: auto;
+            margin-right: 10px;
+            color: white;
+          }
+
+          .message_user {
+            display: flex;
+            width: fit-content;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            background: #f6f6f6;
+            font-family: Montserrat;
+            margin-left: 10px;
+            margin-right: auto;
+            color: black;
+          }
+          .send_at
+          {
+            font-size: 9px;
+            position: relative;
+            top: -5px;
+          }
+          .left{
+            left: 10px;
+          }
+          .right{
+            right: 10px;
+          }
+        }
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+          background: white;
+          border-radius: 0 15px 15px 0;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+          background: #0087F5;
+          border-radius: 8px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: #0087F5;
+        }
+        #zone_text{
+
+        }
+        #button_send_message{
+          border-radius: 75px;
+          width: 50px;
+          height: 50px;
+          position: relative;
+          left: -70px;
+          top: 6px;
+          z-index: 1024;
+          background: #2050BC url('../images/paper-plane.png') no-repeat center;
+          background-size: 20px 20px;
+        }
+        .container_zone_text{
+          width: 99%;
+        }
+        .container_button_send_message{
+          width: 1%;
+        }
+        #zone_text{
+          padding-right: 75px;
+        }
+      }
+    }
+  }
+}
+
+

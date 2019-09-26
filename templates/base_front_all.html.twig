@@ -12,10 +12,10 @@
             <link rel='stylesheet' href='{{ asset('css/style.min.css') }}' />
             <link href="https://fonts.googleapis.com/css?family=Montserrat:300,500,700,900" rel="stylesheet">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+            <script src="{{ asset('js/jquery/jquery.min.js') }}"></script>
             <link rel='stylesheet' href='{{ asset('css/fullcalendar.css') }}'/>
-
-            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         {% endblock %}
@@ -26,26 +26,14 @@
 
     </head>
     <body>
+    {% include 'Front/header.html.twig' %}
 
-        {% include 'Front/header.html.twig' %}
-        <div id="wrapper">
-            <div class="background_landing" style="background: #666 url({{ asset('images/fond2.jpg') }}) center no-repeat; background-size: cover ">
+    {% block body %}
 
-            {% block contentwrapper %}
+    {% endblock %}
 
-            {% endblock %}
-            </div>
-        </div>
-        {% block content %}
+    {% include 'Front/footer.html.twig' %}
 
-        {% endblock %}
-
-        <div id="main">
-            {% block body %}
-
-            {% endblock %}
-        </div>
-        {% include 'Front/footer.html.twig' %}
     </body>
 </html>
 <script>

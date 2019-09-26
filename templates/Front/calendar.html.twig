@@ -1,0 +1,118 @@
+{% extends 'base_front_all.html.twig' %}
+{# templates/base.html.twig #}
+{% block title %}Immovable CA - Contact{% endblock %}
+{% block meta %}Immovable CA - Contact{% endblock %}
+
+
+
+
+{% block body %}
+    <main id="contact">
+        <div class="bandeau">
+            <div>
+                <h1>Notre calendrier</h1>
+            </div>
+        </div>
+        <section id="page">
+            <div id="calendar"></div>
+        </section>
+    </main>
+
+{% endblock %}
+
+{% block script %}
+    <script src='{{ asset('js/moment.min.js') }}'></script>
+    <script src='{{ asset('js/fullcalendar.js') }}'></script>
+    <script src='{{ asset('js/locale-all.js') }}'></script>
+    <script>
+        function resizeCalendar() {
+
+        }
+
+        $(document).ready(function() {
+            resizeCalendar();
+
+        });
+
+        $( window ).resize(function() {
+            resizeCalendar();
+        });
+
+        $(document).ready(function () {
+            function calendarClick(date, url)
+            {
+                $.ajax({
+                    method: 'post',
+                    url: url,
+                    data: {
+                        date: date.unix()
+                    },
+                    success: function(result) {
+                        $("#calendar-day-details").html("");
+                        $("#calendar-day-details").html(result.html);
+                        /*if ($(window).width() <= 768)
+                            $("html, body").animate({scrollTop: $('#calendar-day-details').offset().top - 100});*/
+                    }
+                });
+            }
+
+
+            function loadCalendarEvents(start, end, url, callback) {
+                $.ajax({
+                    method: 'post',
+                    url: url,
+                    data: {
+                        start: start.unix(),
+                        end: end.unix()
+                    },
+                    success: function (result) {
+                        callback(result.events);
+                    }
+                });
+            }
+
+            $('#calendar').fullCalendar({
+                locale: 'fr',
+                selectable: true,
+                selectOverlap: true,
+                defaultView: 'month',
+                height: $(document).height(),
+                handleWindowResize: true,
+                aspectRatio: 2,
+                header: {
+                    left:   'prev',
+                    center: 'title',
+                    right:  'next',
+                },
+                header: {
+                    left: 'prev',
+                    center: 'title',
+                    right: 'next'
+                },
+                dayClick: function(date) {
+                    url = $("#calendar").attr('data-details-endpoint');
+                    calendarClick(date, url);
+                },
+                eventClick: function(event){
+                    //Same as dayClick
+                    var date = $.fullCalendar.moment(event.date);
+                    url = $("#calendar").attr('data-details-endpoint');
+                    calendarClick(date, url);
+                }
+            });
+
+            $('#calendar').fullCalendar('option', 'height', 720);
+
+            let check_size_calendar = () => {
+                if ($(window).width() <= 414)
+                {
+                    $('#calendar').fullCalendar('option', 'height', 520);
+                }
+            };
+
+            $(window).resize(check_size_calendar);
+            $(window).load(check_size_calendar);
+
+        });
+    </script>
+{% endblock %}

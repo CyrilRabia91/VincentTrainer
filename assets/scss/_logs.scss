@@ -1,0 +1,76 @@
+#page_logs{
+  display: block;
+  padding: 50px 70px;
+  box-shadow: 0 0 18px rgba(0,0,0,.2);
+  width: 450px;
+  border-radius: 15px;
+  margin: 70px auto;
+  label{
+    margin:10px 0 0 0 !important;
+  }
+
+  ul{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 11px;
+    list-style: none;
+    padding: 0;
+    color: red;
+  }
+
+  h1{
+    font-size: 26px;
+    text-align:center;
+    margin-bottom: 35px;
+  }
+
+  .input-text{
+    width: 100%;
+  }
+  .input-btn{
+    width: auto;
+    margin-bottom: 20px;
+  }
+  .input-btn:hover {
+  }
+  .under{
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+
+#login{
+  margin-top:75px ;
+  padding: 80px 0;
+}
+
+#subscribe{
+  margin-top:75px ;
+  padding: 80px 0;
+}
+
+.btn-square{
+  margin-top: 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  position: relative;
+  min-width: 232px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #2050BC;
+  text-align: center;
+  color: #fff !important;
+  font-size: 14px;
+  line-height: 16px;
+  padding: 14px 20px;
+  text-decoration: none !important;
+  font-weight: bold;
+}
+
+@media (max-width: 500px) {
+  #page_logs{
+    margin: 0 auto;
+    width: 95%;
+  }
+}

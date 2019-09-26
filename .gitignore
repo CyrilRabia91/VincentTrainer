@@ -7,6 +7,10 @@
 /public/bundles/
 /var/
 /vendor/
+/public/uploads/*
+/public/imports/*
+/public/new_imports/*
+/public/imported_img/*
 ###< symfony/framework-bundle ###
 .DS_STORE
 composer.lock

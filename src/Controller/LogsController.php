@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Form\RegistrationType;
 use App\Entity\User;
+use App\Entity\Chat;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -19,15 +20,10 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class LogsController extends AbstractController
 {
     /**
-     * @Route("/", name="app_login")
+     * @Route("/connexion", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils)
     {
-        if (!empty($this->getUser())){
-            echo "connected";
-            die();
-        }
-
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
         // last username entered by the user
@@ -41,7 +37,6 @@ class LogsController extends AbstractController
      */
     public function subscribe(Request $request, ObjectManager $manager,UserPasswordEncoderInterface $encoder )
     {
-
         $user = new User();
         $user->setStatus("User");
         $form = $this->createForm(RegistrationType::class, $user);
@@ -51,6 +46,12 @@ class LogsController extends AbstractController
             $user->setPassword($hash);
             $user->setBanned(0);
             $manager->persist($user);
+            $manager->flush();
+
+            $chat = new Chat();
+            $chat->setUser($user);
+            $chat->setTitle('Discussion');
+            $manager->persist($chat);
             $manager->flush();
         }
         return $this->render('Logs/subscribe.html.twig',[
@@ -65,4 +66,13 @@ class LogsController extends AbstractController
     {
 
     }
+
+    /**
+     * @Route("/information-suplementaire", name="aditionnal_information")
+     */
+    public function aditionnal_information()
+    {
+        return $this->render('Front/information.html.twig');
+    }
+
 }

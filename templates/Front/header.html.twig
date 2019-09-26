@@ -1,0 +1,123 @@
+<div id="menu">
+    <div class="item-nav-bar-logo">
+        <img src="{{ asset('images/logoIAC-land.png') }}" alt="Immovable Cy.Agents">
+    </div>
+    <div class="header">
+        <a href="{{ path('home') }}">
+            <div class="item-nav-bar">
+                Accueil
+            </div>
+        </a>
+        <a href="{{ path('front_property') }}">
+            <div class="item-nav-bar">
+                Nos biens
+            </div>
+        </a>
+        <a href="{{ path('calendar') }}">
+            <div class="item-nav-bar">
+                Calendrier
+            </div>
+        </a>
+        <a href="{{ path('contact') }}">
+            <div class="item-nav-bar">
+                Contact
+            </div>
+        </a>
+        {% if app.user %}
+            <a href="{{ path('user_account') }}">
+                <div class="item-nav-bar">
+                    {{ app.user.mail }}
+                </div>
+            </a>
+            {% if app.user.status=="Admin" %}
+                <a href="{{ path('listing_user') }}">
+                    <div class="item-nav-bar flex">
+                        <i class="fa fa-cog" style="font-size:22px;display: block"></i>
+                        <p style="font-size: 12px;font-weight: normal;padding-left: 5px">Administrateur</p>
+                    </div>
+                </a>
+            {% endif %}
+            <a class="no_underline" href="{{ path('security_logout') }}">
+                <div class="item-nav-bar-button">
+                    Déconnexion
+                </div>
+            </a>
+        {% else %}
+            <a href="{{ path('subscribe') }}">
+                <div class="item-nav-bar">
+                    S'inscrire
+                </div>
+            </a>
+            <a class="no_underline" href="{{ path('app_login') }}">
+                <div class="item-nav-bar-button">
+                    Se connecter
+                </div>
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+<div id="menu-mobile">
+    <div class="item-nav-bar-logo">
+        <img src="{{ asset('images/logoIAC-land.png') }}" alt="Immovable Cy.Agents">
+    </div>
+    <div class="center-vertical">
+        <span class="text-menu" onclick="openMenu()">Menu &#9776;</span>
+    </div>
+</div>
+<div id="header">
+    <div class="header2">
+        <a class="closebtn" onclick="closeMenu()">&times;</a>
+    </div>
+    <a href="{{ path('home') }}">
+        <div class="item-nav-bar">
+            Accueil
+        </div>
+    </a>
+    <a href="{{ path('front_property') }}">
+        <div class="item-nav-bar">
+            Nos biens
+        </div>
+    </a>
+    <a href="{{ path('calendar') }}">
+        <div class="item-nav-bar">
+            Calendrier
+        </div>
+    </a>
+    <a href="{{ path('contact') }}">
+        <div class="item-nav-bar">
+            Contact
+        </div>
+    </a>
+    {% if app.user %}
+        <a href="{{ path('user_account') }}">
+            <div class="item-nav-bar">
+                {{ app.user.mail }}
+            </div>
+        </a>
+        {% if app.user.status=="Admin" %}
+            <a href="{{ path('listing_user') }}">
+                <div class="item-nav-bar flex">
+                    <i class="fa fa-cog" style="font-size:22px;display: block"></i>
+                    <p style="font-size: 12px;font-weight: normal;padding-left: 5px">Administrateur</p>
+                </div>
+            </a>
+        {% endif %}
+        <a class="no_underline" href="{{ path('security_logout') }}">
+            <div class="item-nav-bar-button">
+                Déconnexion
+            </div>
+        </a>
+    {% else %}
+        <a href="{{ path('subscribe') }}">
+            <div class="item-nav-bar">
+                S'inscrire
+            </div>
+        </a>
+        <a class="no_underline" href="{{ path('app_login') }}">
+            <div class="item-nav-bar-button">
+                Se connecter
+            </div>
+        </a>
+    {% endif %}
+</div>

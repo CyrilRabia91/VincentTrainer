@@ -1,0 +1,182 @@
+#contact {
+  margin-top: 75px;
+
+  .bandeau {
+    height: 300px;
+    background-color: #DBC5AD;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    h1 {
+      text-align: center;
+      color: white;
+    }
+  }
+  #page {
+    padding: 80px 0 0 0;
+    h2{
+      text-align: center;
+      margin-top:80px ;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      max-width: 1250px;
+      margin: 20px auto;
+
+      .item {
+        width: 280px;
+        padding: 5px;
+        display: flex;
+
+        .content {
+          padding-left: 25px;
+          width: 220px;
+          h3 {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+          }
+          p{
+            font-size: 16px;
+          }
+        }
+      }
+
+      .location {
+        .icon {
+          background: #2050BC url('../images/logo_localiser.png') no-repeat center;
+          background-size: cover;
+          border-radius: 50px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .phone {
+        .icon {
+          background: #2050BC url('../images/logo_phone.png') no-repeat center;
+          background-size: cover;
+          border-radius: 50px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .fax {
+        .icon {
+          background: #2050BC url('../images/logo_fax.png') no-repeat center;
+          background-size: cover;
+          border-radius: 50px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+      .mail {
+        .icon {
+          background: #2050BC url('../images/logo_lettre.png') no-repeat center;
+          background-size: cover;
+          border-radius: 50px;
+          width: 60px;
+          height: 60px;
+        }
+      }
+    }
+    .note{
+      padding: 10px 0 0 0;
+    }
+    .stars{
+      display: flex;
+    }
+    #btn_more{
+      display: block;
+      padding: 10px 0;
+      width: 25px;
+      height: 35px;
+    }
+    #btn_less{
+      display: block;
+      width: 25px;
+      height: 35px;
+      padding: 10px 0;
+    }
+    .container_stars{
+      width: 185px;
+      ul{
+        display: inline-block;
+        margin: 0;
+        li{
+          display: inline-block;
+          list-style: none;
+        }
+      }
+    }
+    .icon-star{
+      background: url('../images/star.png') no-repeat center;
+      background-size: 25px 25px;
+      width: 25px;
+      height: 25px;
+      display: block;
+      margin: 9px 0 0 0;
+    }
+    .information_user{
+      display: flex;
+      justify-content: space-between;
+      max-width: 1030px;
+      margin: 0 auto;
+
+      .input_information_user{
+        width: 50%;
+        max-width: 500px;
+        margin:5px 0px;
+      }
+    }
+
+    textarea{
+      max-width: 1030px;
+      margin: 0 auto;
+      width: 100%;
+      display: block;
+      min-height: 300px;
+    }
+    #map{
+      padding-top: 80px;
+    }
+  }
+}
+
+@media (max-width:1115px ){
+  #contact {
+    #page {
+      .information_user{
+        width: 95%;
+        margin: 0 auto;
+      }
+      #content_mail{
+        width: 95%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media (max-width:700px ){
+  #contact {
+    #page {
+      .information_user{
+        display: block;
+      }
+    }
+  }
+}
+
+@media (max-width:425px ){
+  #contact{
+    .bandeau{
+      height: 170px;
+      h1{
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

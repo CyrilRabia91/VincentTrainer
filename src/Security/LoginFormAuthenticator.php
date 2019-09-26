@@ -89,7 +89,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
 
 
-        return new RedirectResponse($this->router->generate('app_login'));
+        return new RedirectResponse($this->router->generate('home'));
     }
 
     protected function getLoginUrl()
