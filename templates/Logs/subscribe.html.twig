@@ -1,0 +1,26 @@
+{% extends 'base_front_all.html.twig' %}
+{# templates/base.html.twig #}
+{% block title %}Immovable CA - S'inscrire{% endblock %}
+{% block meta %}Immovable CA - S'inscrire{% endblock %}
+
+
+
+{% block body %}
+    <main id="subscribe">
+        <div id="page_logs">
+            <h1>S'inscrire</h1>
+            {{ form_start(form) }}
+            {{ form_row(form.mail,{'label':'Nom utilisateur','attr':{'placeholder':'Adresse email','class':'input-text'}}) }}
+            {{ form_row(form.password,{'label':'Mot de passe','attr':{'placeholder':'Mot de passe','class':'input-text'}}) }}
+            {{ form_row(form.confirm_password,{'label':'Confirmez votre mot de passe','attr':{'placeholder':'Répéter votre mot de passe','class':'input-text'}}) }}
+            {{ form_widget(form) }}
+            <button type="submit" class="btn-square">S'inscrire</button><p class="under">Vous possedez déjà un compte ? <a href="{{ path('app_login') }}"> Cliquez ici</a></p>
+            {{ form_end(form) }}
+        </div>
+    </main>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
