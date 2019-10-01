@@ -1,49 +1,75 @@
 {% extends 'base_front.html.twig' %}
 
-{% block title %}Accueil - Immovable Cy.Agents{% endblock %}
+{% block title %}Home - Vincent Personal Trainer{% endblock %}
 
 
 {% block body %}
 
-        <figure class="intro">
-            {#<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/46992/diver2.jpg" alt=""/>#}
-            <img src="{{ asset('images/weight-lifting-man.jpg') }}" alt="Homme qui fait de sport"/>
-            <figcaption class="caption">
-                <p class="text-on-h1">N'en rêve pas,</p>
-                <h1>Fais-le !</h1>
-            </figcaption>
-            <span class="overlay">
-                <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                     y="0px"
-                     viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve" PreserveAspectRatio="none">
-                <path fill="#FFFFFF"
-                      d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"/>
-                </svg>
-            </span>
-        </figure>
-        <section id="first-section">
-            <div class="container">
-                <div class="item">
-                    <img src="{{ asset('images/calendar-icon.png') }}" alt="Icon">
-                    <h2></h2>
-                    <p></p>
-                    <a href="#"></a>
+    <figure class="intro">
+        <img src="{{ asset('images/weight-lifting-man.jpg') }}" alt="Homme qui fait de sport"/>
+        <figcaption class="caption">
+            <p class="text-on-h1">N'en rêve pas,</p>
+            <h1>Fais-le !</h1>
+        </figcaption>
+        <span class="overlay">
+            <svg version="1.1" id="circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                 y="0px"
+                 viewBox="0 0 500 250" enable-background="new 0 0 500 250" xml:space="preserve" PreserveAspectRatio="none">
+            <path fill="#F9F9F9"
+                  d="M250,246.5c-97.85,0-186.344-40.044-250-104.633V250h500V141.867C436.344,206.456,347.85,246.5,250,246.5z"/>
+            </svg>
+        </span>
+    </figure>
+
+    <section id="first-section">
+        <div class="container">
+            <div class="card">
+                <div class="card-head">
+                    <div class="product-detail">
+                        <h2>Contact</h2>
+                    </div>
+                    <span class="back-text">CON</span>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('images/messenger-icon.png') }}" alt="Icon">
-                    <h2></h2>
-                    <p></p>
-                    <a href="#"></a>
+                <div class="card-body">
+                    <p>Vous souhaitez me joindre pour un renseignement ou pour me donner votre avis sur ma préparation, alors contacter moi !</p>
                 </div>
-                <div class="item">
-                    <img src="{{ asset('images/programme-icon.png') }}" alt="Icon">
-                    <h2></h2>
-                    <p></p>
-                    <a href="#"></a>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div class="product-detail">
+                        <h2>Calendier</h2>
+                    </div>
+                    <span class="back-text">CAL</span>
                 </div>
+                <div class="card-body">
+                    <p>Afin de consulter mes disponibilité je met à disposition un calendrier permettant de reserver une séance.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-head">
+                    <div class="product-detail">
+                        <h2>Prix</h2>
+                    </div>
+                    <span class="back-text">PRI</span>
+                </div>
+                <div class="card-body">
+                    <p>Pour connaître le détails de mes séances ainsi que leurs prix je vous invite à consulter cette partie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="biographie">
+        <div class="color"></div>
+        <div class="content">
+            <div class="img">
 
             </div>
-        </section>
+            <div class="text">
+
+            </div>
+        </div>
+
+    </section>
 {% endblock %}
 
 {% block script %}
@@ -76,5 +102,6 @@
                 $('.text-menu').removeAttr('style');
             }
         });
+
     </script>
 {% endblock %}

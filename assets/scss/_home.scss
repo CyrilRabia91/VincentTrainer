@@ -14,7 +14,7 @@ html, body {
   position: relative;
   height: auto;
   transform: translateZ(0);
-  background-image: linear-gradient(35deg,#8DD9FF,#FFD800);
+  background-image: linear-gradient(35deg,white, #535353);
 }
 
 img {
@@ -88,7 +88,7 @@ img {
 }
 
 #first-section{
-  padding: 80px 0;
+  padding: 110px 0;
   .container{
     display: flex;
     justify-content: center;
@@ -96,19 +96,87 @@ img {
     padding: 0 20px;
     margin: 0 auto;
 
-    .item{
-      width: 250px;
-      height: 350px;
-      margin: 15px;
-      border-radius: 8px;
-      padding: 10px;
-      box-shadow:  0 0 12px #ccc;
-      img{
-        width: 50px;
-        height: 50px;
-        border-radius: 2rem;
 
+    .card {
+      background: #fff;
+      display: inline-block;
+      margin: 1rem;
+      position: relative;
+      width: 300px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+      transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+      border-radius: 25px !important;
+      &:hover {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
       }
+    }
+
+    .card-head {
+      position: relative;
+      height: 162px;
+      background: #fa782e;
+      background: -moz-linear-gradient(-45deg, #fda085 8%, #f6d365 83%);
+      background: -webkit-linear-gradient(-45deg, #fda085 8%, #f6d365 83%);
+      background: linear-gradient(-45deg,#fda085 8%,#f6d365 83%);//linear-gradient(135deg, #E0CDA9 8%, #E0CDA9 83%);
+      border-radius: 25px 25px 0 0;
+    }
+
+    .card-logo {
+      width: 55px;
+      margin: 20px;
+    }
+
+    .product-detail {
+      padding: 0 20px;
+      font-size: 11px;
+      color: #fff;
+    }
+
+    .product-detail h2 {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      padding: 10px 0;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .back-text {
+      display: inline-block;
+      font-size: 125px;
+      font-weight: 900;
+      margin-left: -7px;
+      margin-top: -35px;
+      opacity: 0.1;
+    }
+
+    .card-body {
+      background: #fff;
+      border-radius: 0 0 25px 25px;
+      font-size: 16px;
+      font-weight: 200;
     }
   }
 }
+
+#biographie{
+  display: flex;
+  width: 100%;
+  min-height: 500px;
+  .color{
+    background-color:#fca980;
+    width: 400px;
+  }
+  .content{
+    background-color: white;
+    width: calc( 100% - 400px );
+    .text{
+      font-size: 18px;
+      font-weight: 200;
+      line-height: 15px;
+    }
+  }
+}
+
+
+
