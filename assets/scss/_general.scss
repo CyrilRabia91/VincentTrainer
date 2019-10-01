@@ -31,7 +31,7 @@ main{
 }
 
 body{
-  font-family: Montserrat;
+  font-family:Montserrat;
   //background-color: #DBC5AD !important;
 }
 
@@ -62,16 +62,17 @@ body{
 
 .btn-effect {
   margin: 10px;
-  padding: 10px 25px;
+  padding: 7px 25px;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
   height: 50px;
   cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 0 20px #eee;
+  font-weight: 200;
+  //box-shadow: 0 0 20px #eee;
   border-radius: 10px;
+  font-size: 20px;
   width: 250px;
   &:hover {
     background-position: right center; /* change the direction of the change here */

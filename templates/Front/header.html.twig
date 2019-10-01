@@ -3,18 +3,18 @@
         {#<img src="{{ asset('images/logoIAC-land.png') }}" alt="Immovable Cy.Agents">#}
     </div>
     <div class="header">
-        <a href="#">
+        <a href="#" class="change_color">
             <div class="item-nav-bar">
                 Accueil
             </div>
         </a>
-        <a href="#">
+        <a href="#" class="change_color">
             <div class="item-nav-bar">
                 Contact
             </div>
         </a>
         {% if app.user %}
-            <a href="#">
+            <a href="#" class="change_color">
                 <div class="item-nav-bar">
                     {{ app.user.mail }}
                 </div>
@@ -25,18 +25,16 @@
                 </div>
             </a>
         {% else %}
-            <a href="{{ path('subscribe') }}">
+            <a href="{{ path('subscribe') }}" class="change_color">
                 <div class="item-nav-bar">
                     S'inscrire
                 </div>
             </a>
             <a class="no_underline" href="{{ path('app_login') }}">
-                <div class="item-nav-bar-button">
-                    Se connecter
-                </div>
+                <div class="btn-effect btn-effect-color">Se connecter</div>
             </a>
         {% endif %}
-        <div class="btn-effect btn-effect-color">Se connecter</div>
+
     </div>
 </div>
 

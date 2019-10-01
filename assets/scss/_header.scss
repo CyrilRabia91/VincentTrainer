@@ -4,6 +4,7 @@
   top: -4px;
   font-family: Montserrat;
   cursor: pointer;
+  color: white;
 }
 
 .closebtn{
@@ -33,19 +34,16 @@
   }
   a{
     text-decoration: none;
-    font-weight: normal;
-    color: #000;
-    &:hover{
-      border-bottom:6px solid #DBC5AD;
-    }
+    color: white;
   }
 
   .item-nav-bar{
     min-width: 100px;
     height: 29px;
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 300;
     padding: 23px 25px;
+    line-height: 17px;
     margin: 0 5px;
     text-align: center;
   }

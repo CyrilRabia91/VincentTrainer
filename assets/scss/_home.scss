@@ -1,0 +1,114 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.intro {
+  position: relative;
+  height: auto;
+  transform: translateZ(0);
+  background-image: linear-gradient(35deg,#8DD9FF,#FFD800);
+}
+
+img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  mix-blend-mode: multiply;
+}
+
+
+.intro .caption {
+  position: absolute;
+  bottom: 25%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  margin: 20px 0 0 0 ;
+  color: white;
+
+  .text-on-h1{
+    font-size: 2vw;
+    font-weight: 200;
+    font-family: Montserrat;
+    margin: 0;
+  }
+
+  h1 {
+    display: inline-block;
+    width: 70%;
+    font-size: 6vw;
+    font-weight: 100;
+  }
+}
+
+.intro .overlay {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+
+  svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.copy {
+  width: 100%;
+  max-width: 60rem;
+  height: 200%;
+  margin: 0 auto;
+  padding: 10vw 5vw 0 5vw;
+  color: black;//mix(black, $blue, 50%);
+  font-weight: 300;
+
+  p {margin-bottom: 1.5rem;}
+}
+
+.copy .teaser {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+#first-section{
+  padding: 80px 0;
+  .container{
+    display: flex;
+    justify-content: center;
+    max-width: 1180px;
+    padding: 0 20px;
+    margin: 0 auto;
+
+    .item{
+      width: 250px;
+      height: 350px;
+      margin: 15px;
+      border-radius: 8px;
+      padding: 10px;
+      box-shadow:  0 0 12px #ccc;
+      img{
+        width: 50px;
+        height: 50px;
+        border-radius: 2rem;
+
+      }
+    }
+  }
+}
