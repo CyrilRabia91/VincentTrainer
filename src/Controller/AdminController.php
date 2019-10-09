@@ -56,8 +56,9 @@ class AdminController extends AbstractController
         if ( $this->logsAdmin())
             return $this->redirectToRoute('home');
 
+        $chats = $this->getDoctrine()->getRepository('App:Chat')->findAll();
 
-        return $this->render('admin/Chat/chat.html.twig', []);
+        return $this->render('admin/Chat/chat.html.twig', ['chats'=>$chats]);
     }
 
     /**

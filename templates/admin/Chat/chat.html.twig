@@ -5,17 +5,29 @@
         <h1 class="display-4">Conversation</h1>
         <p class="lead">Nombre d'utlisateur : </p>
         <hr class="my-4">
-        <nav class="navbar navbar-light bg-light">
-            <div class="form-inline">
-                <input class="form-control mr-sm-2 search" type="search" placeholder="Rechercher" aria-label="Search">
-                <div class="btn btn-outline-success my-2 my-sm-0" onclick="searchUser()">Rechercher</div>
+        <div class="container-chat">
+            <div class="chats">
+                <header>
+                    <nav class="navbar navbar-light bg-light">
+                        <div class="form-inline">
+                            <input class="form-control mr-sm-2 search" type="search" placeholder="Rechercher" aria-label="Search">
+                            <div class="btn btn-outline-success my-2 my-sm-0" onclick="searchUser()">Rechercher</div>
+                        </div>
+                    </nav>
+                </header>
+                <div id="result_search_chat">
+                    {% include 'admin/Chat/list-chat.html.twig' with {'chats':chats} %}
+                </div>
             </div>
-        </nav>
-        <br>
-        <br>
-        <div id="result_search">
+            <div id="show_chat">
 
+            </div>
         </div>
+
+
+
+
+
     </div>
 {% endblock %}
 

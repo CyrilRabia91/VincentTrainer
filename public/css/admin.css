@@ -58,3 +58,24 @@ body{
 #result_search{
     overflow: auto;
 }
+
+.container-chat{
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-chat .chats{
+    width: 375px;
+    height: 100%;
+}
+
+.container-chat #result_search_chat{
+    background-color: #f8f9fa!important;
+    padding: 25px;
+    margin-top: 10px;
+}
+
+.container-chat #show_chat{
+    width: calc( 100% - 400px);
+    background-color: #f8f9fa!important;;
+}
