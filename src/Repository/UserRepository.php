@@ -58,4 +58,18 @@ class UserRepository extends ServiceEntityRepository
 
         return $entity;
     }
+
+    public function search($value){
+        $query = $this->createQueryBuilder("e")
+                ->Where('(e.firstname LIKE :search OR  e.lastname LIKE :search)')
+                ->setParameter("search", "%".$value."%");
+
+        $results = $query
+            ->getQuery()
+            ->getResult();
+
+        return $results;
+    }
+
+
 }

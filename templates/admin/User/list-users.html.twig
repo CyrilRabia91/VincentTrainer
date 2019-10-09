@@ -1,0 +1,26 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Tel</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for user in users %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ user.mail }}</td>
+            <td>{{ user.firstname }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.phone }}</td>
+            <td><button class="btn btn-success">Consulter</button></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+

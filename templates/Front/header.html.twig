@@ -19,6 +19,14 @@
                     {{ app.user.mail }}
                 </div>
             </a>
+            {% if app.user.status=="Admin" %}
+                <a href="{{ path('admin') }}" class="change_color">
+                    <div class="item-admin item-nav-bar">
+                        <i class="fa fa-cog" style="font-size:22px;display: block"></i>
+                        <p>Administrateur</p>
+                    </div>
+                </a>
+            {% endif %}
             <a class="no_underline" href="{{ path('security_logout') }}">
                 <div class="btn-effect btn-effect-color">
                     Déconnexion
@@ -67,10 +75,10 @@
             </div>
         </a>
         {% if app.user.status=="Admin" %}
-            <a href="#">
-                <div class="item-nav-bar flex">
+            <a href="{{ path('admin') }}">
+                <div class="item-admin">
                     <i class="fa fa-cog" style="font-size:22px;display: block"></i>
-                    <p style="font-size: 12px;font-weight: normal;padding-left: 5px">Administrateur</p>
+                    <p>Administrateur</p>
                 </div>
             </a>
         {% endif %}

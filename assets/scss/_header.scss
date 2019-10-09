@@ -7,6 +7,14 @@
   color: white;
 }
 
+.item-admin{
+  display: flex;
+  p{
+    margin: 0;
+    padding-left: 5px;
+  }
+}
+
 .closebtn{
   position: absolute !important;
   right: 20px!important;

@@ -1,0 +1,34 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <div id="users" class="jumbotron">
+        <h1 class="display-4">Utilisateurs</h1>
+        <p class="lead">Nombre de conversation : {{ users | length }}</p>
+        <hr class="my-4">
+        <nav class="navbar navbar-light bg-light">
+            <div class="form-inline">
+                <input class="form-control mr-sm-2 search" type="search" placeholder="Rechercher" aria-label="Search">
+                <div class="btn btn-outline-success my-2 my-sm-0" onclick="searchUser()">Rechercher</div>
+            </div>
+        </nav>
+        <br>
+        <br>
+        <div id="result_search">
+            {% include 'admin/User/list-users.html.twig' with {'users':users} %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        function searchUser(){
+            var value = $('.search').val();
+            var data = {'value':value}
+            var path = "{{ path('ajax_search_user') | escape('js') }}";
+
+            $.post(path, data, function(server){
+                $('#result_search').html(server.html)
+            })
+        }
+    </script>
+{% endblock %}
