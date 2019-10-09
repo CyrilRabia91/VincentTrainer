@@ -81,3 +81,20 @@ body{
     width: calc( 100% - 400px);
     background-color: #f8f9fa!important;;
 }
+
+@media (max-width: 500px){
+    .menu-admin a {
+        max-width: none;
+        width:calc( 100% - 20px );
+        margin: 10px;
+    }
+
+    .menu-admin h5{
+        text-align: center;
+    }
+
+    #navbarToggleExternalContent .no_style{
+        width: 100%;
+        text-align: center;
+    }
+}
