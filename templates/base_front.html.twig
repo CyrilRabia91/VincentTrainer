@@ -27,11 +27,17 @@
     </head>
     <body>
         <div class="extra-space"></div>
-        {% include 'Front/header.html.twig' %}
+        {% set class = "" %}
+        {% if "connexion" in app.request.pathinfo or "inscription" in app.request.pathinfo %}
+            {% set class = "menu-white" %}
+        {% endif %}
+        {% include 'Front/header.html.twig' with {'class':class} %}
         {% block body %}
 
         {% endblock %}
-        {% include 'Front/footer.html.twig' %}
+        {% if "connexion" not in app.request.pathinfo and "inscription" not in app.request.pathinfo %}
+            {% include 'Front/footer.html.twig' %}
+        {% endif %}
     </body>
 </html>
 <script>

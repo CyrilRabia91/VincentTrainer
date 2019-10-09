@@ -6,7 +6,7 @@
 {% block body %}
 
     <figure class="intro">
-        <img src="{{ asset('images/weight-lifting-man.jpg') }}" alt="Homme qui fait de sport"/>
+        <img src="{{ asset('images/weight-lifting-man-min.jpg') }}" alt="Homme qui fait de sport"/>
         <figcaption class="caption">
             <p class="text-on-h1">N'en rêve pas,</p>
             <h1>Fais-le !</h1>
@@ -20,29 +20,35 @@
             </svg>
         </span>
     </figure>
-
+    <section id="background-mobile">
+        <p></p>
+    </section>
     <section id="first-section">
+        <h3>Le coach sportif qu'il vous faut !</h3>
+        <p class="introduction">Vous cherchez à vous <span>remettre en forme</span>  et reprendre le sport progressivement mais de la bonne manière ou tout simplement <span>tout donner</span>  lors de séances complètes et structurées, alors réserver une séance et je pourrais <span>vous aider!</span> </p>
         <div class="container">
             <div class="card">
                 <div class="card-head">
                     <div class="product-detail">
                         <h2>Contact</h2>
                     </div>
-                    <span class="back-text">CON</span>
                 </div>
                 <div class="card-body">
+                    <img src="{{ asset('images/chat-icon-min.png') }}" alt="">
                     <p>Vous souhaitez me joindre pour un renseignement ou pour me donner votre avis sur ma préparation, alors contacter moi !</p>
+                    <a href="#" class="btn-white">Contacter</a>
                 </div>
             </div>
-            <div class="card">
+            <div class="card scale-1-1">
                 <div class="card-head">
                     <div class="product-detail">
                         <h2>Calendier</h2>
                     </div>
-                    <span class="back-text">CAL</span>
                 </div>
                 <div class="card-body">
+                    <img src="{{ asset('images/calendar-icon-min.png') }}" alt="">
                     <p>Afin de consulter mes disponibilité je met à disposition un calendrier permettant de reserver une séance.</p>
+                    <a href="#" class="btn-white">Réserver</a>
                 </div>
             </div>
             <div class="card">
@@ -50,22 +56,33 @@
                     <div class="product-detail">
                         <h2>Prix</h2>
                     </div>
-                    <span class="back-text">PRI</span>
                 </div>
                 <div class="card-body">
+                    <img src="{{ asset('images/credit-card-icon-min.png') }}" alt="">
                     <p>Pour connaître le détails de mes séances ainsi que leurs prix je vous invite à consulter cette partie.</p>
+                    <a href="#" class="btn-white">Consulter</a>
                 </div>
             </div>
         </div>
     </section>
+    <div class="test">
+        <section class="section--purple wow fadeInLeft " data-wow-duration="2s"></section>
+        <section class="section--green wow fadeInLeft" data-wow-duration="2s"></section>
+    </div>
     <section id="biographie">
         <div class="color"></div>
         <div class="content">
             <div class="img">
-
+                <img src="{{ asset('images/picture_profil-min.jpg') }}" alt="Vincent Hoyau, photo de profil">
             </div>
             <div class="text">
+                <b>Qui suis-je ?</b><br><br>
+                Je me présente, Vincent Hoyau et j'ai 23 ans.<br>
+                Etant depuis mon plus jeune âge passionné de sport, j’ai pratiqué de nombreuses discipline. Je suis diplômé d’une Licence
+                STAPS Entraînement Sportif spécialité athlétisme réalisé à l’université Paris-Sud et possède le diplôme d'entraîneur d'athlétisme 1er et 2ème degré.<br><br>
 
+                Je propose des séances de fitness à domicile ou en extérieur pour tous les âges et tous les niveaux, remise en forme, perte de poids, prise de masse musculaire.
+                Mes études m’ont permis d'analyser les facteurs de performance des disciplines sportives il m’est donc également possible de suivre la préparation physique d’un athlète dans l'atteinte d'un objectif sportif.<br>
             </div>
         </div>
 
@@ -84,12 +101,16 @@
             var window_offset = inViewport($('.intro'));
             $(".overlay").height(window_offset);
             $(".caption").css("bottom", (window_offset / 4) );
-            if ((window_offset / 4) == 0 ){
+            if ((window_offset / 4) < 30 ){
                 $( ".change_color" ).each(function( ) {
                     $(this).css('color','black');
                 });
                 $('.text-menu').css('color','black');
                 $('#menu').css({
+                    'background-color':'white',
+                    'box-shadow':' 0 0 12px #ccc'
+                });
+                $('#menu-mobile').css({
                     'background-color':'white',
                     'box-shadow':' 0 0 12px #ccc'
                 })
@@ -99,9 +120,25 @@
                     $(this).removeAttr('style');
                 });
                 $('#menu').removeAttr('style');
+                $('#menu-mobile').removeAttr('style');
                 $('.text-menu').removeAttr('style');
             }
         });
 
+    </script>
+    <script>
+        $(window).scroll(function() {
+            var hT = $('.container').offset().top,
+                hH = $('.container').outerHeight(),
+                wH = $(window).height(),
+                wS = $(this).scrollTop();
+            if (wS+180 > (hT+hH-wH)){
+                if (window.innerWidth > 1024)
+                    $('.container').css({
+                        'transform':'translateX(0)',
+                        'opacity':'1'
+                    })
+            }
+        });
     </script>
 {% endblock %}

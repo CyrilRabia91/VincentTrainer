@@ -16,6 +16,14 @@
   cursor: pointer;
 }
 
+.menu-white{
+  background-color: white !important;
+  box-shadow: rgb(204, 204, 204) 0px 0px 12px !important;
+  .change_color, .text-menu{
+    color: #000 !important;
+  }
+}
+
 #menu{
   width: 100%;
   height: 75px;
@@ -122,6 +130,13 @@
   transition: 0.5s;
   a{
     color: black;
+    font-family: Montserrat;
+    font-weight: 200;
+
+    .btn-effect{
+      margin:15px 0 0 0 !important;
+      width: 185px !important;
+    }
   }
   a:hover{
     color: black;
@@ -131,21 +146,7 @@
   .item-nav-bar{
     margin: 10px 0;
   }
-  .item-nav-bar-button{
-    margin-top: 14px;
-    display: inline-block;
-    text-transform: uppercase;
-    position: relative;
-    max-width: 300px;
-    border-radius: 21px;
-    background-color: #2050BC;
-    text-align: center;
-    color: #fff !important;
-    font-size: 14px;
-    line-height: 15px;
-    padding: 14px 20px;
-    text-decoration: none !important;
-  }
+
   .header2{
     margin-bottom: 20px;
     text-align: right;

@@ -88,10 +88,34 @@ img {
 }
 
 #first-section{
-  padding: 110px 0;
+  padding: 140px 0;
+  h3{
+    font-weight: 200;
+    text-align: center;
+    padding: 0 20px;
+    margin: 0 0 25px 0;
+  }
+  .introduction{
+    max-width: 840px;
+    padding: 0 20px;
+    font-weight: 200;
+    font-size: 18px;
+    font-family: Montserrat;
+    margin: 0 auto 70px;
+    text-align: center;
+
+    span{
+      font-weight: bold;
+    }
+  }
+
   .container{
+    transition: 1s;
+    transform: translateX(-100%);
+    opacity: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     max-width: 1180px;
     padding: 0 20px;
     margin: 0 auto;
@@ -113,7 +137,6 @@ img {
 
     .card-head {
       position: relative;
-      height: 162px;
       background: #fa782e;
       background: -moz-linear-gradient(-45deg, #fda085 8%, #f6d365 83%);
       background: -webkit-linear-gradient(-45deg, #fda085 8%, #f6d365 83%);
@@ -133,12 +156,11 @@ img {
     }
 
     .product-detail h2 {
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: 2px;
+      font-size: 22px;
+      text-align: center;
+      font-weight: 200;
       padding: 10px 0;
       margin: 0;
-      text-transform: uppercase;
     }
 
     .back-text {
@@ -155,6 +177,20 @@ img {
       border-radius: 0 0 25px 25px;
       font-size: 16px;
       font-weight: 200;
+      text-align: center;
+
+      p{
+        height: 96px;
+      }
+
+      img{
+        width: 70px;
+        height: auto;
+        margin: 15px auto 30px auto;
+        padding: 1rem;
+        border-radius: 2rem;
+        box-shadow: 0 0 12px #ccc;
+      }
     }
   }
 }
@@ -165,15 +201,70 @@ img {
   min-height: 500px;
   .color{
     background-color:#fca980;
-    width: 400px;
+    width: 40%;
+  }
+  .img{
+    background-color: #fff;
+    width: 1px;
+    height: 1px;
+    position: relative;
+    top: 77px;
+    z-index: 2;
+    left: -175px;
+    img{
+      width: 250px;
+      height: auto;
+    }
   }
   .content{
     background-color: white;
-    width: calc( 100% - 400px );
+    width: 60%;
     .text{
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 200;
-      line-height: 15px;
+      line-height: 25px;
+      padding: 25px 25px 25px 100px;
+    }
+  }
+}
+
+
+.test{
+
+}
+
+
+/* RESPONSIVE ABOUT HOME */
+
+@media(max-width: 1024px){
+  #first-section{
+    padding: 100px 0 !important;
+    .container{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media(max-width: 700px){
+  #first-section{
+    padding: 50px 0 100px 0 !important;
+
+    .introduction{
+      font-size: 18px;
+    }
+  }
+  .overlay{
+    display: none;
+  }
+
+  .intro .caption {
+    .text-on-h1{
+      font-size: 20px
+    }
+
+    h1 {
+      font-size: 38px;
     }
   }
 }

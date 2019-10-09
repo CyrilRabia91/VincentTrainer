@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="menu" class="{{ class }}">
     <div class="item-nav-bar-logo">
         {#<img src="{{ asset('images/logoIAC-land.png') }}" alt="Immovable Cy.Agents">#}
     </div>
@@ -20,7 +20,7 @@
                 </div>
             </a>
             <a class="no_underline" href="{{ path('security_logout') }}">
-                <div class="item-nav-bar-button">
+                <div class="btn-effect btn-effect-color">
                     Déconnexion
                 </div>
             </a>
@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<div id="menu-mobile">
+<div id="menu-mobile" class="{{ class }}">
     <div class="item-nav-bar-logo">
         {#<img src="{{ asset('images/logoIAC-land.png') }}" alt="Immovable Cy.Agents">#}
     </div>
@@ -75,7 +75,7 @@
             </a>
         {% endif %}
         <a class="no_underline" href="{{ path('security_logout') }}">
-            <div class="item-nav-bar-button">
+            <div class="btn-effect btn-effect-color">
                 Déconnexion
             </div>
         </a>
@@ -86,7 +86,7 @@
             </div>
         </a>
         <a class="no_underline" href="{{ path('app_login') }}">
-            <div class="item-nav-bar-button">
+            <div class="btn-effect btn-effect-color">
                 Se connecter
             </div>
         </a>
