@@ -21,6 +21,11 @@ class Chat
      */
     private $title;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $status;
+
     public function getUser()
     {
         return $this->user;
@@ -52,4 +57,16 @@ class Chat
 
         return $this;
     }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function setStatus($status)
+    {
+        $this->status = $status;
+    }
+
+
 }

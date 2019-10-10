@@ -83,6 +83,9 @@ class AdminController extends AbstractController
 
     public function ajax_search_user(Request $request)
     {
+        $html = "";
+        if ($this->logsAdmin())
+            return new JsonResponse(['html'=>$html,'status'=>"Error"]);
 
         $value = $request->request->get('value');
         if (empty($value))
@@ -91,6 +94,72 @@ class AdminController extends AbstractController
             $users = $this->getDoctrine()->getRepository('App:User')->search($value);
 
         $html = $this->renderView('admin/User/list-users.html.twig',['users'=>$users]);
+
+        return new JsonResponse(['html'=>$html,'status'=>200]);
+    }
+
+
+    /**
+     * @Route("/ajax_load_chat", name="ajax_load_chat")
+     * @param Request $request
+     * @return JsonResponse
+     */
+
+    public function ajax_load_chat(Request $request)
+    {
+        $html = "";
+        if ($this->logsAdmin())
+            return new JsonResponse(['html'=>$html,'status'=>"Error"]);
+
+        $value = $request->request->get('value');
+        $chat = $this->getDoctrine()->getRepository('App:Chat')->find($value);
+        $messages = $this->getDoctrine()->getRepository('App:Message')->findBy(['chat'=>$value]);
+
+        $html = $this->renderView('admin/Chat/box-chat.html.twig',['messages'=>$messages,'chat'=>$chat]);
+
+        return new JsonResponse(['html'=>$html,'status'=>200]);
+    }
+
+    /**
+     * @Route("/ajax_load_last_chat", name="ajax_load_last_chat")
+     * @param Request $request
+     * @return JsonResponse
+     */
+
+    public function ajax_load_last_chat(Request $request)
+    {
+        $html = "";
+        if ($this->logsAdmin())
+            return new JsonResponse(['html'=>$html,'status'=>"Error"]);
+
+        $value = $request->request->get('value');
+        $messages = $this->getDoctrine()->getRepository('App:Message')->findBy(['chat'=>$value]);
+
+        $html = $this->renderView('admin/Chat/list-of-msg.html.twig',['messages'=>$messages]);
+
+        return new JsonResponse(['html'=>$html,'status'=>200]);
+    }
+
+    /**
+     * @Route("/ajax_search_chat", name="ajax_search_chat")
+     * @param Request $request
+     * @return JsonResponse
+     */
+
+    public function ajax_search_chat(Request $request)
+    {
+        $html = "";
+        if ($this->logsAdmin())
+            return new JsonResponse(['html'=>$html,'status'=>"Error"]);
+
+        $value = $request->request->get('value');
+
+        if (empty($value))
+            $chats = $this->getDoctrine()->getRepository('App:Chat')->findAll();
+        else
+            $chats = $this->getDoctrine()->getRepository('App:Chat')->search($value);
+
+        $html = $this->renderView('admin/Chat/list-chat.html.twig',['chats'=>$chats]);
 
         return new JsonResponse(['html'=>$html,'status'=>200]);
     }

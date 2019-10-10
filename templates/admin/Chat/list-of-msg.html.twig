@@ -1,0 +1,7 @@
+{% for msg in messages %}
+    <div class="msg-{{ msg.status }}">
+                <span>
+                    {{ msg.content }}
+                </span>
+    </div>
+{% endfor %}

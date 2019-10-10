@@ -47,4 +47,17 @@ class ChatRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    public function search($value){
+        $query = $this->createQueryBuilder("e")
+            ->join("e.user","u")
+            ->Where('(u.firstname LIKE :search  OR  u.lastname LIKE :search)')
+            ->setParameter("search", "%".$value."%");
+
+        $results = $query
+            ->getQuery()
+            ->getResult();
+
+        return $results;
+    }
 }

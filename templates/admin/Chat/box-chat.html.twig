@@ -1,0 +1,14 @@
+<div id="box-chat">
+    <header>
+        {{ chat.user.firstname }} {{ chat.user.lastname }}
+    </header>
+    <div class="content" id="list-msg">
+       {% include 'admin/Chat/list-of-msg.html.twig' with {'messages':messages} %}
+    </div>
+    <div class="answer-msg">
+        <textarea id="message-a-{{ chat.id }}"></textarea>
+        <div class="vertical-center">
+            <button class="btn btn-success" onclick="sendMsg({{ chat.id }})">Envoyer</button>
+        </div>
+    </div>
+</div>

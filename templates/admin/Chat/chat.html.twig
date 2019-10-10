@@ -3,15 +3,15 @@
 {% block body %}
     <div id="users" class="jumbotron">
         <h1 class="display-4">Conversation</h1>
-        <p class="lead">Nombre d'utlisateur : </p>
+        <p class="lead">Nombre de conversation :  {{ chats | length }}</p>
         <hr class="my-4">
         <div class="container-chat">
-            <div class="chats">
+            <div class="chats" style="z-index: 1">
                 <header>
                     <nav class="navbar navbar-light bg-light">
                         <div class="form-inline">
                             <input class="form-control mr-sm-2 search" type="search" placeholder="Rechercher" aria-label="Search">
-                            <div class="btn btn-outline-success my-2 my-sm-0" onclick="searchUser()">Rechercher</div>
+                            <div class="btn btn-outline-success my-2 my-sm-0" onclick="searchChat()">Rechercher</div>
                         </div>
                     </nav>
                 </header>
@@ -23,24 +23,65 @@
 
             </div>
         </div>
-
-
-
-
-
     </div>
 {% endblock %}
 
 {% block script %}
     <script>
-        function searchUser(){
-            var value = $('.search').val();
-            var data = {'value':value}
-            var path = "{{ path('ajax_search_user') | escape('js') }}";
+        var interval = "";
+        var value = 0;
+
+        var lastChat = 0;
+        function showChat(id){
+            console.log(id)
+            if ($('.active'))
+                $('.active').removeClass('active');
+
+            $('#chat_'+id).addClass('active');
+
+            var data = {'value':id}
+            var path = "{{ path('ajax_load_chat') | escape('js') }}";
 
             $.post(path, data, function(server){
-                $('#result_search').html(server.html)
+                $('#show_chat').html(server.html)
+                clearTimeout(interval);
+                value = id;
+                interval = window.setInterval(getMessages, 3000);
+            })
+
+        }
+
+        function getMessages(){
+            var data = {'value':value}
+            var path = "{{ path('ajax_load_last_chat') | escape('js') }}";
+
+            $.post(path, data, function(server){
+                $('#list-msg').html(server.html)
             })
         }
+
+        function sendMsg(id){
+            let content = $("#message-a-"+id).val();
+            $("#message-a-"+id).val('');
+            var data = {'value':id,'status':'admin','content':content};
+            var path = "{{ path('ajax_send_msg') | escape('js') }}";
+            let html = $('#list-msg').html()+ "<div class='msg-admin'><span>"+content+"</span></div>";
+            $('#list-msg').html(html);
+
+            $.post(path, data, function(server){
+
+            })
+        }
+
+        function searchChat(){
+            let value = $('.search').val();
+            var data = {'value':value};
+            var path = "{{ path('ajax_search_chat') | escape('js') }}";
+            $.post(path, data, function(server){
+                $('#result_search_chat').html(server.html)
+            })
+        }
+
+
     </script>
 {% endblock %}
