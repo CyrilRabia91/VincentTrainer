@@ -6,7 +6,7 @@
        {% include 'admin/Chat/list-of-msg.html.twig' with {'messages':messages} %}
     </div>
     <div class="answer-msg">
-        <textarea id="message-a-{{ chat.id }}"></textarea>
+        <textarea onkeypress="return runScript(event,{{ chat.id }})" id="message-a-{{ chat.id }}"></textarea>
         <div class="vertical-center">
             <button class="btn btn-success" onclick="sendMsg({{ chat.id }})">Envoyer</button>
         </div>

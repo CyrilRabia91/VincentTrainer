@@ -43,6 +43,8 @@ class LogsController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
             $hash = $encoder->encodePassword($user, $user->getPassword());
+            $date = new \DateTime('now');
+            $user->setCreatedAt($date);
             $user->setPassword($hash);
             $user->setBanned(0);
             $manager->persist($user);
@@ -53,6 +55,8 @@ class LogsController extends AbstractController
             $chat->setTitle('Discussion');
             $manager->persist($chat);
             $manager->flush();
+
+            return $this->redirectToRoute('app_login');
         }
         return $this->render('Logs/subscribe.html.twig',[
             'form'=>$form->createView()

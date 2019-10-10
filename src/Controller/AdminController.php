@@ -49,6 +49,19 @@ class AdminController extends AbstractController
     }
 
     /**
+     * @Route("/admin/edit-utilisateurs/{id}", name="edit-user")
+     */
+    public function editUser($id)
+    {
+        if ( $this->logsAdmin())
+            return $this->redirectToRoute('home');
+
+        $user = $this->getDoctrine()->getRepository('App:User')->find($id);
+
+        return $this->render('admin/User/edit-user.html.twig', ['user'=>$user]);
+    }
+
+    /**
      * @Route("/admin/messagerie", name="chat")
      */
     public function showChat()

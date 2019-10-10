@@ -17,7 +17,7 @@
             <td>{{ user.firstname }}</td>
             <td>{{ user.lastname }}</td>
             <td>{{ user.phone }}</td>
-            <td><button class="btn btn-success">Consulter</button></td>
+            <td><a class="btn btn-success" href="{{ path('edit-user',{'id':user.id}) }}" >Consulter</a></td>
         </tr>
     {% endfor %}
     </tbody>

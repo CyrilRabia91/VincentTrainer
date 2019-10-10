@@ -1,0 +1,40 @@
+{% extends 'base_admin.html.twig' %}
+
+{% block body %}
+    <div id="users" class="jumbotron">
+        <h1 class="display-4">{{ user.firstname }} {{ user.lastname }}</h1>
+        <p class="lead"></p>
+        <hr class="my-4">
+        <table class="table table-striped">
+            <tr>
+                <th>Prénom :</th>
+                <td><input type="text" class="form-control edit_user" value="{{ user.firstname }}"></td>
+            </tr>
+            <tr>
+                <th>Nom :</th>
+                <td><input type="text" class="form-control edit_user" value="{{ user.lastname }}"></td>
+            </tr>
+            <tr>
+                <th>Email : </th>
+                <td><input type="text" class="form-control edit_user" value="{{ user.mail }}"></td>
+            </tr>
+            <tr>
+                <th>Téléphone</th>
+                <td><input type="text" class="form-control edit_user" value="{{ user.phone }}"></td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+                    var value = $('.search').val();
+            var data = {'value':value}
+            var path = "{{ path('ajax_search_user') | escape('js') }}";
+
+            $.post(path, data, function(server){
+                $('#result_search').html(server.html)
+            })
+        
+    </script>
+{% endblock %}
